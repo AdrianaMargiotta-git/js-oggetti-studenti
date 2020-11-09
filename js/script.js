@@ -11,9 +11,7 @@ $(document).ready(function(){
     for (var key in studente){
         //console.log(studente[key]); //stampo solo i valori
         console.log(key + ': ' + studente[key]); //stampo la proprietà completa (sia il nome che il valore)
-        //document.getElementById("stampa").innerHTML = studente[key]; //stampa a schermo
-        $('.stampa').append(studente[key] + ' '); //stampa a schermo solo i valori
-        //$('.stampa').append(key + ': ' + studente[key]); //stampa a schermo solo i valori
+        $('.stampa').append(key + ': ' + studente[key] + ' '); //stampa a schermo la proprietà completa
     };
 
     //Esercizio 2: Creare un array di oggetti di studenti. Ciclare su tutti gli studenti e stampare per ognuno nome e cognome
@@ -38,8 +36,6 @@ $(document).ready(function(){
         //tramite il ciclo for stampo per ogni studente il nome e il cognome
     for (var i = 0; i < arrayStudenti.length; i++) {
         console.log(arrayStudenti[i].nome + ' ' + arrayStudenti[i].cognome); //li mostro nella console
-        //document.getElementById("stampa2").innerHTML = arrayStudenti[i].nome + ' ' + arrayStudenti[i].cognome;
-        //document.getElementById("stampa2").innerHTML = JSON.stringify(arrayStudenti[1].nome, null, 4);
     };
 
     //Eserczio 3: Dare la possibilità all’utente attraverso 3 prompt di aggiungere un nuovo oggetto studente inserendo nell’ordine: nome, cognome e età.
@@ -51,5 +47,17 @@ $(document).ready(function(){
     };
     arrayStudenti.push(nuovoStudente); //pusho i dati dell'utente nell'arrayStudenti
     console.log(arrayStudenti);
+
+    for(var i = 0; i < arrayStudenti.length; i++){
+    console.log(arrayStudenti[i].nome + ' ' + arrayStudenti[i].cognome + ' ' + arrayStudenti[i].eta);
+    };
+
+    //Stampa tutta la lista a schermo
+    for(var i = 0; i < arrayStudenti.length; i++){
+        for (var key in arrayStudenti[i]){
+            document.getElementById('listaCompleta').innerHTML = "Lista studenti";
+            $('.studenti').append('<p>' + key + ': ' + arrayStudenti[i][key] + '</p>');
+        };
+    };
 
 });
