@@ -40,6 +40,16 @@ $(document).ready(function(){
         console.log(arrayStudenti[i].nome + ' ' + arrayStudenti[i].cognome); //li mostro nella console
         //document.getElementById("stampa2").innerHTML = arrayStudenti[i].nome + ' ' + arrayStudenti[i].cognome;
         //document.getElementById("stampa2").innerHTML = JSON.stringify(arrayStudenti[1].nome, null, 4);
-    }
+    };
+
+    //Eserczio 3: Dare la possibilità all’utente attraverso 3 prompt di aggiungere un nuovo oggetto studente inserendo nell’ordine: nome, cognome e età.
+        //creo una nuova variabile per inserire i sati dell'utente
+    var nuovoStudente = {
+        'nome' : prompt("Inserisci il tuo nome:"),
+        'cognome' : prompt("Inserisci il tuo cognome:"),
+        'eta' : parseInt(prompt("Inserisci la tua eta"))
+    };
+    arrayStudenti.push(nuovoStudente); //pusho i dati dell'utente nell'arrayStudenti
+    console.log(arrayStudenti);
 
 });
